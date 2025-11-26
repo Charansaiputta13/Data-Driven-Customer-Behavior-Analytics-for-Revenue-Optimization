@@ -1,9 +1,9 @@
 # 🛒 Data-Driven Customer Behavior Analytics for Revenue Optimization 
-**A complete end-to-end Data Analytics project using Python, SQL, and Power BI**
+**A complete end-to-end Data Analytics project using Python, SQL, Streamlit, and Machine Learning**
 
-![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+![Status](https://img.shields.io/badge/Project-Upgraded-brightgreen)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
-![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-yellow)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red)
 ![SQL](https://img.shields.io/badge/PostgreSQL-Analysis-lightgrey)
 ![License](https://img.shields.io/badge/License-MIT-black)
 
@@ -12,90 +12,71 @@
 ## 📌 **Project Overview**
 
 This project dives deep into the **shopping patterns of 3,900 customers** across various demographics, preferences, and product categories.  
+It has been upgraded to an **Industry-Level Standard** with a modular code structure, a live interactive web dashboard, and machine learning capabilities.
 
-The goal is to uncover insights that help businesses:  
-✔ Understand what customers buy  
-✔ Identify high-value segments  
-✔ Evaluate discount effectiveness  
-✔ Improve subscription strategies  
-✔ Optimize product & marketing decisions  
-
-The workflow is fully end-to-end:  
-**Python → PostgreSQL (SQL Analysis) → Power BI Dashboard → Business Insights**
+### 🚀 **New Features**
+- **Interactive Web Dashboard**: Built with Streamlit for real-time data exploration.
+- **Machine Learning**: Customer segmentation using K-Means clustering.
+- **Modular Codebase**: Clean, reusable Python modules in `src/`.
 
 ---
 
-## 📂 **Dataset Summary**
+## 📂 **Project Structure**
 
-**Total Records:** 3,900  
-**Total Columns:** 18  
-
-### **Key Features**
-- **Customer Info:** Age, Gender, Location, Age Group, Subscription Status  
-- **Shopping Behavior:** Frequency, Previous Purchases, Review Rating  
-- **Purchase Info:** Category, Item Purchased, Price, Discount Applied, Season  
-- **Operational Data:** Shipping Type, Promo Codes  
-
-### **Data Quality**
-- Missing Values: *37 in Review Rating*  
-- Issues such as inconsistent formatting and redundant columns were resolved during cleaning.
-
----
-
-## 🧹 **Data Preparation (Python)**
-
-Performed using **Pandas, NumPy, Matplotlib, Seaborn**.
-
-### ✔ Key Steps
-- Imported and explored raw data (`df.info()`, `df.describe()`)
-- Converted to readable formats (snake_case)
-- Treated missing values using **median imputation by category**
-- Engineered:
-  - `age_group`  
-  - `purchase_frequency_days`
-- Removed redundant features (e.g., promo_code_used if discount_applied already exists)
-- Loaded the cleaned dataset into **PostgreSQL** for further analysis
+```
+customer-shopping-behavior-analysis
+┣ 📂 data/                  # Raw data files
+┃ ┗ 📄 customer_shopping_behavior.csv
+┣ 📂 notebooks/             # Jupyter notebooks for experimentation
+┃ ┗ 📄 Shopping_Behaviour_Analysis.ipynb
+┣ 📂 sql/                   # SQL scripts
+┃ ┗ 📄 customer_analysis.sql
+┣ 📂 src/                   # Source code modules
+┃ ┣ 📄 data_loader.py       # Data loading & cleaning
+┃ ┣ 📄 analytics.py         # KPI calculations
+┃ ┗ 📄 ml_models.py         # Machine Learning models
+┣ 📄 app.py                 # Streamlit Dashboard Entry Point
+┣ 📄 requirements.txt       # Project dependencies
+┗ 📄 README.md              # Project Documentation
+```
 
 ---
 
-## 🗄️ **SQL Analysis (PostgreSQL)**
+## 🚀 **How to Run This Project**
 
-A total of **10+ business queries** were executed to generate meaningful insights.  
-Here are the major analyses:
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/yourusername/yourrepo.git
+    cd yourrepo
+    ```
 
-### 🔍 **Key Insights Extracted**
-- **Revenue by Gender** — Identified top-spending segments  
-- **High-Spending Discount Users** — Found discount users spending above average  
-- **Top Rated Products** — Extracted highest-performing products  
-- **Shipping Type Comparison** — Spending difference between Standard vs Express  
-- **Subscription Impact** — Subscribers vs Non-Subscribers: spend & frequency  
-- **Discount-Dependent Products** — Items frequently purchased with discounts  
-- **Customer Segmentation** — Classified customers into:
-  - *New*
-  - *Returning*
-  - *Loyal*
-- **Top 3 Products per Category**  
-- **Correlation between Repeat Buying & Subscriptions**  
-- **Revenue by Age Group**
+2.  **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Each SQL query directly answers a real business question.
+3.  **Run the Dashboard**
+    ```bash
+    streamlit run app.py
+    ```
+    The app will open in your browser at `http://localhost:8501`.
 
 ---
 
-## 📊 **Power BI Dashboard**
+## 📊 **Dashboard Features**
 
-An interactive dashboard was created to visualize key metrics:
+### 1. **Executive Overview**
+- Real-time KPIs (Revenue, Avg Spend, Total Customers).
+- Interactive charts for Revenue by Category and Gender.
 
-### 🔸 Dashboard Includes:
-- Revenue Breakdown  
-- Customer Segments  
-- Subscription Insights  
-- Best-selling Products  
-- Discount vs Non-discount Purchases  
-- Age Group Revenue  
-- Category & Seasonal Trends  
+### 2. **Deep Dive Analytics**
+- Filter data by Gender and Category.
+- Analyze Subscription impact on spending.
+- View Customer Age distribution.
 
-The dashboard simplifies decision-making and highlights impactful patterns.
+### 3. **ML Insights (Clustering)**
+- **K-Means Clustering** to identify distinct customer segments.
+- 3D Visualization of clusters based on Spend, Frequency, and Rating.
 
 ---
 
@@ -103,23 +84,10 @@ The dashboard simplifies decision-making and highlights impactful patterns.
 
 Based on the insights:
 
-1. **Boost Subscriptions**  
-   Promote exclusive subscriber benefits to increase recurring revenue.
-
-2. **Strengthen Loyalty Programs**  
-   Reward returning customers to shift them into the *Loyal* category.
-
-3. **Optimize Discount Strategy**  
-   Avoid unnecessary discounts on products that sell well without them.
-
-4. **Promote High-Rated Products**  
-   Feature top-rated items in marketing campaigns.
-
-5. **Target High-Revenue Age Groups**  
-   Personalize campaigns for the most profitable segments.
-
-6. **Leverage Express Shipping Users**  
-   They often show higher purchase amounts—ideal for premium offers.
+1. **Boost Subscriptions**: Promote exclusive subscriber benefits to increase recurring revenue.
+2. **Strengthen Loyalty Programs**: Reward returning customers to shift them into the *Loyal* category.
+3. **Optimize Discount Strategy**: Avoid unnecessary discounts on products that sell well without them.
+4. **Target High-Revenue Age Groups**: Personalize campaigns for the most profitable segments.
 
 ---
 
@@ -127,41 +95,9 @@ Based on the insights:
 
 | Area | Technologies Used |
 |------|------------------|
-| **Data Cleaning** | Python (Pandas, NumPy) |
-| **Visualization** | Matplotlib, Seaborn, Power BI |
-| **Database** | PostgreSQL |
-| **Reporting** | Power BI Interactive Dashboard |
-| **Version Control** | Git & GitHub |
-
----
-
-## 📁 **Project Structure**
-📦 customer-shopping-behavior-analysis
-┣ 📂 data
-┣ 📂 notebooks
-┣ 📂 sql_queries
-┣ 📂 powerbi_dashboard
-┣ 📄 README.md
-┣ 📄 requirements.txt
-┗ 📄 main.py
-
-
----
-
-## 🚀 How to Run This Project
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/yourrepo.git
-
-# Navigate inside project
-cd yourrepo
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run analysis script
-python main.py
-
-
+| **App Framework** | Streamlit |
+| **Data Processing** | Pandas, NumPy |
+| **Visualization** | Plotly, Matplotlib, Seaborn |
+| **Machine Learning** | Scikit-Learn (K-Means) |
+| **Database** | PostgreSQL (SQL Scripts included) |
 
