@@ -14,7 +14,10 @@
 This project dives deep into the **shopping patterns of 3,900 customers** across various demographics, preferences, and product categories.  
 It has been upgraded to an **Industry-Level Standard** with a modular code structure, a live interactive web dashboard, and machine learning capabilities.
 
-### 🚀 **New Features**
+### 🚀 **New Features (Phase 2)**
+- **Premium UI/UX**: Custom Dark Theme, styled metrics cards, and polished layout.
+- **Market Basket Analysis**: Discover product associations using the Apriori algorithm.
+- **Predictive Analytics**: Forecast Customer Lifetime Value (CLV).
 - **Interactive Web Dashboard**: Built with Streamlit for real-time data exploration.
 - **Machine Learning**: Customer segmentation using K-Means clustering.
 - **Modular Codebase**: Clean, reusable Python modules in `src/`.
@@ -34,7 +37,9 @@ customer-shopping-behavior-analysis
 ┣ 📂 src/                   # Source code modules
 ┃ ┣ 📄 data_loader.py       # Data loading & cleaning
 ┃ ┣ 📄 analytics.py         # KPI calculations
-┃ ┗ 📄 ml_models.py         # Machine Learning models
+┃ ┗ 📄 ml_models.py         # Machine Learning models (Clustering, Apriori, CLV)
+┣ 📂 .streamlit/            # Streamlit configuration
+┃ ┗ 📄 config.toml          # Custom Theme settings
 ┣ 📄 app.py                 # Streamlit Dashboard Entry Point
 ┣ 📄 requirements.txt       # Project dependencies
 ┗ 📄 README.md              # Project Documentation
@@ -73,10 +78,19 @@ customer-shopping-behavior-analysis
 - Filter data by Gender and Category.
 - Analyze Subscription impact on spending.
 - View Customer Age distribution.
+- **Download Filtered Data** as CSV.
 
 ### 3. **ML Insights (Clustering)**
 - **K-Means Clustering** to identify distinct customer segments.
 - 3D Visualization of clusters based on Spend, Frequency, and Rating.
+
+### 4. **Market Basket Analysis**
+- Identify "Frequently Bought Together" items.
+- View Association Rules sorted by Lift.
+
+### 5. **Predictive Analytics**
+- Predict **Customer Lifetime Value (CLV)**.
+- Identify top high-value customers.
 
 ---
 
@@ -88,6 +102,7 @@ Based on the insights:
 2. **Strengthen Loyalty Programs**: Reward returning customers to shift them into the *Loyal* category.
 3. **Optimize Discount Strategy**: Avoid unnecessary discounts on products that sell well without them.
 4. **Target High-Revenue Age Groups**: Personalize campaigns for the most profitable segments.
+5. **Cross-Sell Opportunities**: Use Market Basket insights to bundle frequently bought items.
 
 ---
 
@@ -98,6 +113,6 @@ Based on the insights:
 | **App Framework** | Streamlit |
 | **Data Processing** | Pandas, NumPy |
 | **Visualization** | Plotly, Matplotlib, Seaborn |
-| **Machine Learning** | Scikit-Learn (K-Means) |
+| **Machine Learning** | Scikit-Learn (K-Means), Mlxtend (Apriori) |
 | **Database** | PostgreSQL (SQL Scripts included) |
 
